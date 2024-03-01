@@ -4,15 +4,25 @@ import {
   getProductsDealOfTheDay,
   getProductsTopTrending,
 } from "../api/api";
+import ProductCard from "../components/ProductCard";
 
 export default function Home() {
+  const [topTrending, setTopTrending] = useState([]);
   useEffect(() => {
     async function getData() {
       let result = await getProductsDealOfTheDay();
-      result = await getProductsTopTrending();
+      const resultTopTrending = await getProductsTopTrending();
       result = await getProductsByCategory("ac");
+      setTopTrending(resultTopTrending);
     }
     getData();
   }, []);
-  return <h1>This is my croma website</h1>;
+  return (
+    <section>
+      <h1>Top trending</h1>
+      {topTrending.map((prod) => (
+        <ProductCard key={prod._id} details={prod} />
+      ))}
+    </section>
+  );
 }
