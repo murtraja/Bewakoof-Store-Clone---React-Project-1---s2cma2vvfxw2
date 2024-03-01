@@ -77,10 +77,12 @@
   display: block;
 }
 .categoryItem {
-  padding-bottom: 0.5rem;
+  padding-bottom: 0.25rem;
+  padding-top: 0.25rem;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
 }
 .categoryItem:hover {
+  /* .categoryItem:nth-child(odd) { */
   background-color: green;
 }

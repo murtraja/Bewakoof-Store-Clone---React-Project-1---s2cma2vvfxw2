@@ -1,6 +1,29 @@
+import { useEffect, useState } from "react";
+
 import "../styles/App.css";
 
 function App() {
+  const [categories, setCategories] = useState([]);
+
+  useEffect(() => {
+    async function getData() {
+      try {
+        const url =
+          "https://academics.newtonschool.co/api/v1/ecommerce/electronics/categories";
+        const headers = { projectId: "5a37v9hlwstc" };
+        const fetchResult = await fetch(url, { headers });
+        const jsonResult = await fetchResult.json();
+        console.log(jsonResult);
+        setCategories(
+          jsonResult.data.map((c) => c.charAt(0).toUpperCase() + c.slice(1))
+        );
+      } catch (e) {
+        console.error(e);
+        setTimeout(getData, 1000);
+      }
+    }
+    getData();
+  }, []);
   return (
     <div>
       <nav>
@@ -12,10 +35,11 @@ function App() {
                 <span>≡</span> Menu
               </div>
               <div className="categoryDropdown">
-                <div className="categoryItem">Category 1</div>
-                <div className="categoryItem">Category 2</div>
-                <div className="categoryItem">Category 3</div>
-                <div className="categoryItem">Category 4</div>
+                {categories.map((category, index) => (
+                  <div key={index} className="categoryItem">
+                    {category}
+                  </div>
+                ))}
               </div>
             </div>
             <div className="navSearch">
