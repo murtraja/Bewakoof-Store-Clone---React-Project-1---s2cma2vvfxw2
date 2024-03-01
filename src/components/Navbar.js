@@ -1,24 +1,13 @@
 import { useEffect, useState } from "react";
+import { getCategories } from "../api/api";
 
 export default function Navbar() {
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
     async function getData() {
-      try {
-        const url =
-          "https://academics.newtonschool.co/api/v1/ecommerce/electronics/categories";
-        const headers = { projectId: "5a37v9hlwstc" };
-        const fetchResult = await fetch(url, { headers });
-        const jsonResult = await fetchResult.json();
-        console.log(jsonResult);
-        setCategories(
-          jsonResult.data.map((c) => c.charAt(0).toUpperCase() + c.slice(1))
-        );
-      } catch (e) {
-        console.error(e);
-        setTimeout(getData, 1000);
-      }
+      const categories = await getCategories();
+      setCategories(categories);
     }
     getData();
   }, []);
