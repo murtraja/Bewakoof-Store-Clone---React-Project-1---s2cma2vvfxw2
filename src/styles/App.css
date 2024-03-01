@@ -62,3 +62,25 @@
   color: black;
   right: 0;
 }
+.navMenu {
+  position: relative;
+}
+.categoryDropdown {
+  position: absolute;
+  top: 100%;
+  width: max-content;
+  background-color: black;
+  padding-top: 0.5rem;
+  display: none;
+}
+.navMenu:hover .categoryDropdown {
+  display: block;
+}
+.categoryItem {
+  padding-bottom: 0.5rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+.categoryItem:hover {
+  background-color: green;
+}

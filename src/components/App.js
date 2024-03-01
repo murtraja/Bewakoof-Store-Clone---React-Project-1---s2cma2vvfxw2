@@ -7,8 +7,16 @@ function App() {
         <div className="nav">
           <div className="navLeft">
             <img src="https://media-ik.croma.com/prod/https://media.croma.com/image/upload/v1637759004/Croma%20Assets/CMS/Category%20icon/Final%20icon/Croma_Logo_acrkvn.svg" />
-            <div>
-              <span>≡</span> Menu
+            <div className="navMenu">
+              <div>
+                <span>≡</span> Menu
+              </div>
+              <div className="categoryDropdown">
+                <div className="categoryItem">Category 1</div>
+                <div className="categoryItem">Category 2</div>
+                <div className="categoryItem">Category 3</div>
+                <div className="categoryItem">Category 4</div>
+              </div>
             </div>
             <div className="navSearch">
               <input type="text" placeholder="What are you looking for?" />
@@ -26,6 +34,7 @@ function App() {
           </div>
         </div>
       </nav>
+      <h1>This is my croma website</h1>
     </div>
   );
 }
