@@ -3,6 +3,7 @@ import { getCategories } from "../api/api";
 
 export default function Navbar() {
   const [categories, setCategories] = useState([]);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     async function getData() {
@@ -17,18 +18,19 @@ export default function Navbar() {
         <div className="navLeft">
           <img src="https://www.reliancedigital.in/build/client/images/loaders/rd_logo.svg" />
           <div className="navMenu">
-            <div>
+            <div onClick={() => setMenuOpen(!menuOpen)}>
               Menu
-              <span className="menuOpen">≡</span>
-              <span className="menuClose">X</span>
+              <span className="menuOpen">{menuOpen ? "x" : "≡"}</span>
             </div>
-            <div className="categoryDropdown">
-              {categories.map((category, index) => (
-                <div key={index} className="categoryItem">
-                  {category}
-                </div>
-              ))}
-            </div>
+            {menuOpen ? (
+              <div className="categoryDropdown">
+                {categories.map((category, index) => (
+                  <div key={index} className="categoryItem">
+                    {category}
+                  </div>
+                ))}
+              </div>
+            ) : null}
           </div>
           <div className="navSearch">
             <input type="text" placeholder="Find you favorite products" />

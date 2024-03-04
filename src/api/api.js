@@ -1,4 +1,4 @@
-const PROJECT_ID = "5a37v9hlwstc";
+const PROJECT_ID = "d0tdo9mtp0cj";
 const BASE_URL = "https://academics.newtonschool.co";
 // const BASE_URL = "https://staging.academics.newtonschool.co";
 
@@ -33,7 +33,7 @@ export async function getProducts(queryParamName, queryParamValue) {
   return result.data;
 }
 
-export async function getProductsDealOfTheDay() {
+export async function getLowestPricesOfTheDay() {
   const result = await getProducts("sort", '{"price":-1}');
   return result;
 }
