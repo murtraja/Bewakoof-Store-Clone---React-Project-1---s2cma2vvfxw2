@@ -65,6 +65,9 @@
 .navMenu {
   position: relative;
 }
+.menuClose {
+  display: none;
+}
 .categoryDropdown {
   position: absolute;
   top: 100%;
@@ -75,6 +78,12 @@
 }
 .navMenu:hover .categoryDropdown {
   display: block;
+}
+.navMenu:hover .menuClose {
+  display: inline;
+}
+.navMenu:hover .menuOpen {
+  display: none;
 }
 .categoryItem {
   padding-bottom: 0.25rem;
