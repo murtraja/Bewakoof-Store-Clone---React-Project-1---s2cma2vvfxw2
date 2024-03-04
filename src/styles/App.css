@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 .nav {
-  background-color: black;
+  background-color: red;
   height: 2.5rem;
   /* width: 100%; */
   color: white;
@@ -27,18 +27,20 @@
   display: flex;
   background-color: white;
   padding: 0.2rem;
-  border-radius: 0.3rem;
+  border-radius: 0.8rem;
 }
 .navSearch > input {
   border: 0;
   outline: 0;
+  margin-left: 3px;
 }
 .navAddress {
   display: flex;
   align-items: center;
 }
-.navAddressPencil {
-  font-size: 0.8rem;
+.navRightItem {
+  display: flex;
+  font-size: 0.9rem;
 }
 .navRight {
   display: flex;

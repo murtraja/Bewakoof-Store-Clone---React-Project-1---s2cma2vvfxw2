@@ -15,11 +15,12 @@ export default function Navbar() {
     <nav>
       <div className="nav">
         <div className="navLeft">
-          <img src="https://media-ik.croma.com/prod/https://media.croma.com/image/upload/v1637759004/Croma%20Assets/CMS/Category%20icon/Final%20icon/Croma_Logo_acrkvn.svg" />
+          <img src="https://www.reliancedigital.in/build/client/images/loaders/rd_logo.svg" />
           <div className="navMenu">
             <div>
+              Menu
               <span className="menuOpen">≡</span>
-              <span className="menuClose">X</span> Menu
+              <span className="menuClose">X</span>
             </div>
             <div className="categoryDropdown">
               {categories.map((category, index) => (
@@ -30,18 +31,23 @@ export default function Navbar() {
             </div>
           </div>
           <div className="navSearch">
-            <input type="text" placeholder="What are you looking for?" />
+            <input type="text" placeholder="Find you favorite products" />
             <div>🔍</div>
           </div>
         </div>
         <div className="navRight">
-          <div className="navAddress">
+          <div className="navAddress navRightItem">
             <div>📌</div>
-            <div>New Delhi, 110009</div>
-            <div className="navAddressPencil">🖉</div>
+            <div>Enter your pin code</div>
           </div>
-          <div>👤</div>
-          <div className="navCart">🛒</div>
+          <div className="navRightItem">
+            <div className="navCart">🛒</div>
+            <div>Cart</div>
+          </div>
+          <div className="navRightItem">
+            <div>👤</div>
+            <div>Login</div>
+          </div>
         </div>
       </div>
     </nav>
